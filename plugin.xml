@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="hu.wanari.plugin.sample"
+        version="1.0.0">
+
+  <name>Sample</name>
+
+  <engines>
+    <engine name="cordova" version=">=4.0.0"/>
+  </engines>
+
+  <asset src="www/sample.js" target="js/sample.js"/>
+
+  <js-module src="www/sample.js" name="sample">
+    <clobbers target="sample" />
+  </js-module>
+
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="Sample">
+        <param name="android-package" value="hu.wanari.plugin.sample.Sample"/>
+      </feature>
+    </config-file>
+    <source-file src="src/android/Sample.java" target-dir="src/hu/wanari/plugin/sample/"/>
+  </platform>
+
+</plugin>
